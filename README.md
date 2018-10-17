@@ -1,2 +1,3 @@
 # webapp-demo-aws
-Database API
+
+For demonstration purposes only
