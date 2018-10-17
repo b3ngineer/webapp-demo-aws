@@ -1,0 +1,48 @@
+{
+  "name": "webapp-demo-aws",
+  "version": "1.0.0",
+  "description": "Web App Demo for AWS Integration",
+  "main": "dist/index.js",
+  "repository": "git@github.com:b3ngineer/webapp-demo-aws.git",
+  "author": "b3ngineer <ben.harris.when@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "babel": "babel index.js -d dist",
+    "test": "yarn babel && mocha",
+    "production":
+      "yarn install --modules-folder dist/node_modules --production --ignore-scripts",
+    "build": "yarn babel && yarn production && cd dist && zip -rq dist.zip ."
+  },
+  "babel": {
+    "presets": ["env"]
+  },
+  "eslintConfig": {
+    "extends": ["eslint:recommended", "standard"],
+    "parser": "babel-eslint"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "cpx": "^1.5.0",
+    "eslint": "^4.18.2",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "express": "^4.16.3",
+    "husky": "^0.14.3",
+    "mocha": "^5.0.4",
+    "mockery": "^2.1.0",
+    "prettier": "^1.11.1",
+    "prettier-standard": "^8.0.0",
+    "rimraf": "^2.6.2",
+    "shelljs": "^0.8.1",
+    "standard": "^11.0.0"
+  }
+}

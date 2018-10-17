@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - yarn
+  pre_build:
+    commands:
+      - yarn test
+  build:
+    commands:
+      - yarn build
+  post_build:
+    commands:
+      - aws lambda update-function-code --region us-west-2 --function-name webapp-demo-db --zip-file fileb://dist/dist.zip
